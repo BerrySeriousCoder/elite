@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
+}
+
+/* external fonts */
+@font-face {
+  font-family: 'GrillMaster';
+  src: url('/src/assets/font/Grillmaster.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oddilini';
+  src: url('/src/assets/font/Oddilini.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
