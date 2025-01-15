@@ -1,4 +1,4 @@
-import { animate, easeInOut,   } from 'motion';
+import {  easeInOut,   } from 'motion';
 import { easeOut, motion } from "motion/react"
 import React from 'react';
 

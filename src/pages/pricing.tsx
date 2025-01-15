@@ -215,7 +215,7 @@ const PricingPage: React.FC = () => {
         <div className="text-center mb-16">
           <h1 className=" text-4xl lg:text-6xl font-bold mb-6">
             <span 
-              className="relative font-Oddiline  inline-block font-Oddiline"
+              className="relative   inline-block font-Oddiline"
               style={{ 
                 color: '#e5f2bf',
                 textShadow: '0 0 20px rgba(135, 169, 34, 0.5)'

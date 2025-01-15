@@ -1,4 +1,4 @@
-import { easeOut, motion } from "motion/react"
+import {  motion } from "motion/react"
 
 
 interface HorizontalWordsProp {
