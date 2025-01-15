@@ -7,6 +7,11 @@ export default {
   ],
   theme: {
   	extend: {
+		clipPath: {
+			'paper-cut-10': 'polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%)',
+			'paper-cut-20': 'polygon(0 20%, 20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%)',
+			'paper-cut-30': 'polygon(0 30%, 30% 0, 100% 0, 100% 70%, 70% 100%, 0 100%)',
+		  },
 		fontFamily: {
 			GrillMaster: ['GrillMaster', 'sans-serif'], 
 			Oddiline: ['Oddiline' , 'sans-serif']
@@ -45,6 +50,37 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  corePlugins: {
+    filter: true, 
+  },
+  plugins: [require("tailwindcss-animate"),
+	function ({ addUtilities }) {
+		const newUtilities = {
+		  '.no-scrollbar::-webkit-scrollbar': {
+			display: 'none', 
+		  },
+		  '.no-scrollbar': {
+			'-ms-overflow-style': 'none', 
+			'scrollbar-width': 'none',
+		  },
+		};
+		addUtilities(newUtilities);
+	  },
+	  function ({ addUtilities }) {
+		const clipPathUtilities = {
+		  '.paper-cut-10': {
+			clipPath: 'polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%)',
+		  },
+		  '.paper-cut-20': {
+			clipPath: 'polygon(0 20%, 20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%)',
+		  },
+		  '.paper-cut-30': {
+			clipPath: 'polygon(0 30%, 30% 0, 100% 0, 100% 70%, 70% 100%, 0 100%)',
+		  },
+		};
+		addUtilities(clipPathUtilities, ['responsive', 'hover']);
+	  }
+  ]
+  ,
 }
 

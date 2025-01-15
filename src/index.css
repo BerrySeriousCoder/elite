@@ -21,3 +21,30 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.paper-cut {
+  clip-path: polygon(
+    0 var(--cut-percentage),              /* Top-left corner with cut */
+    var(--cut-percentage) 0,              /* Top-right corner with cut */
+    100% 0,                               /* Top-right corner */
+    100% calc(100% - var(--cut-percentage)), /* Bottom-right corner with cut */
+    calc(100% - var(--cut-percentage)) 100%, /* Bottom-left corner with cut */
+    0 100%                                /* Bottom-left corner */
+  );
+}
+
+.grayscale-img {
+  @apply grayscale;
+}

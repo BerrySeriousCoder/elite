@@ -4,11 +4,12 @@ import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import {motion} from 'motion/react'
 import { HorizontalWords } from "./horizontalword";
-import InteractiveHoverButton from "../ui/interactive-hover-button";
+import InteractiveHoverButton from "../ui/interactive-hover-button"; 
+import logo from '../../assets/elite-primary-logo.png'
 export default function HeroSection() {
     return (
-
-        <div className="relative w-full h-full" >
+       
+        <div className="relative w-full lg:h-screen h-[800px]" >
                
                 <motion.div initial={{y:100,opacity:0}} animate={{ y: 0 , opacity : 1 }} transition={{ duration: 1.5, delay: 0.9, ease: "easeInOut" }} className="relative z-0 flex justify-center items-center">
                           <span className="font-Oddiline  text-[#e5f2bf] text-2xl mt-8 lg:mt-0 lg:text-[150px] text-center leading-[1.1] tracking-wide font-bold">
@@ -18,7 +19,7 @@ export default function HeroSection() {
 
        
         <motion.div
-      className="bg-[url('/src/assets/herobg.png')] bg-cover bg-center h-screen w-full absolute z-20 -top-16 lg:top-0 left-0"
+      className="bg-[url('/src/assets/herobg.png')] bg-cover bg-center lg:h-screen h-[800px] w-full absolute z-20 -top-16 lg:top-0 left-0"
       initial={{ opacity: 0, scale: 0.9 }} 
       animate={{ opacity: 1, scale: 1 }} 
       transition={{ duration: 0.9, ease: 'easeOut' }} 
@@ -30,23 +31,26 @@ export default function HeroSection() {
     <div className="absolute right-5 lg:right-10" >
           <HorizontalWords words="GAIN" ></HorizontalWords>
     </div>
-        <div className="rotate-[25deg] absolute  right-0 top-[470px] z-20 lg:z-0 lg:right-36 lg:top-10  scale-75 lg:scale-100" >
+        <div className="rotate-[25deg] absolute  right-0 top-96 z-20 lg:z-0   lg:right-36 lg:top-10  scale-75 lg:scale-100" >
 
            <BoxComponent  icon={<AccessTimeFilledIcon sx={{ color: '#87a922', fontSize: '3rem' }} ></AccessTimeFilledIcon>} text={"Hours"} number={1.5}></BoxComponent>
         </div>
-        <div className="-rotate-[25deg] absolute left-0 top-[470px] z-20 lg:z-0 lg:left-40 lg:top-10 scale-75 lg:scale-100" >
+        <div className="-rotate-[25deg] absolute left-0 top-96 z-20 lg:z-0 lg:left-40 lg:top-10 scale-75 lg:scale-100" >
 
            <BoxComponent  icon={<LocalFireDepartmentIcon sx={{ color: '#87a922', fontSize: '3rem' }} ></LocalFireDepartmentIcon>} text={"Kcal"} number={550}></BoxComponent>
         </div>
-        <div className="rotate-[10deg] absolute right-5 lg:right-96 -bottom-52 lg:-bottom-96 scale-50 lg:scale-100 " >
+        <div className=" lg:hidden z-50 absolute right-5 lg:right-96 bottom-32 lg:bottom-40 scale-50 lg:scale-100 " >
+          <img src={logo} alt="logo"  />
+        </div>
+        <div className="rotate-[10deg] absolute right-5 lg:right-96 bottom-10 lg:bottom-40 scale-100 lg:scale-100 " >
 
            <BoxComponent  icon={<FitnessCenterIcon sx={{ color: '#87a922', fontSize: '3rem' }} ></FitnessCenterIcon>} text={"Hours"} number={1.5}></BoxComponent>
         </div>
-        <div className="-rotate-[10deg] absolute left-5 lg:left-96 -bottom-52 lg:-bottom-96 scale-50 lg:scale-100 " >
+        <div className="-rotate-[10deg] absolute left-5 lg:left-96 bottom-10 lg:bottom-40 scale-100 z-40 lg:scale-100 " >
 
            <BoxComponent  icon={<FitnessCenterIcon sx={{ color: '#87a922', fontSize: '3rem' }} ></FitnessCenterIcon>} text={"Hours"} number={1.5}></BoxComponent>
         </div >
-        <motion.div initial={{y:100, opacity:0}} animate={{y:0 , opacity:1}}  transition={{ duration: 0.9, delay: 1.5, ease: "easeOut" }} className="absolute z-30 right-16 -bottom-96 hidden lg:block " >
+        <motion.div initial={{y:100, opacity:0}} animate={{y:0 , opacity:1}}  transition={{ duration: 0.9, delay: 1.5, ease: "easeOut" }} className="absolute z-30 right-16 bottom-40 hidden lg:block " >
 
         <InteractiveHoverButton className="w-44 h-14 " text="Let's Start" ></InteractiveHoverButton>
         </motion.div>

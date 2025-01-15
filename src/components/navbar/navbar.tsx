@@ -2,28 +2,28 @@ import Logo from '../../assets/elite-primary-logo.png';
 import ShimmerButton from "../ui/shimmer-button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'About', href: '/schedule' },
-  { name: 'Features', href: '/testimonials' },
-  { name: 'Services', href: '/contact' },
+  { name: 'About', href: '/aboutus' },
+  { name: 'ContactUs', href: '/contactus' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const navigate = useNavigate()
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <div className="flex justify-between items-center p-3 lg:p-10">
-        <div className="lg:w-72">
-          <img className="lg:h-16 h-12" src={Logo} alt="logo" />
+        <div  className="lg:w-72">
+          <img onClick={() => {navigate('/')}} className="lg:h-16 h-12" src={Logo} alt="logo" />
         </div>
         
         <div className="lg:flex lg:w-96 justify-between text-gray-400 hidden">
           {navigation.map((element, index) => (
-            <div key={index}>
+            <div className='cursor-pointer hover:text-white'  onClick={() => {navigate(element.href)}}  key={index}>
               {element.name}
             </div>
           ))}
@@ -67,12 +67,14 @@ export default function Navbar() {
             ))}
             <div className="space-y-4 pt-4">
               <ShimmerButton 
+                onClick={() => {navigate('contactus')}}
                 className="w-full text-black" 
                 background={"#87a922"}
               >
                 Contact Us
               </ShimmerButton>
               <ShimmerButton 
+                onClick={()=>{navigate('/')}}
                 className="w-full" 
                 shimmerColor={"#87a922"}
               >
