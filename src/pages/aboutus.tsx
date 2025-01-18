@@ -100,10 +100,11 @@ const AboutUs: FC = () => {
       <img src={imagePath} alt={alt} className="w-full h-full object-cover" />
     </div>
   );
+  const colors = ['#e5f2bf' , '#6a7a38' , '#87a922']
 
   return (
     <div className="bg-black min-h-screen py-16 overflow-hidden">
-      <AnimatedBackground colors={['#87a922']} ></AnimatedBackground>
+      <AnimatedBackground colors={colors} ></AnimatedBackground>
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <ScrollReveal>

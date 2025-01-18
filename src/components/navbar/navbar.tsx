@@ -3,6 +3,7 @@ import ShimmerButton from "../ui/shimmer-button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
+import ContactPopup from '../selltemplate/selltemplatecard';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -14,6 +15,10 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate()
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => setIsPopupOpen(true);
+  const handleClosePopup = () => setIsPopupOpen(false);
   return (
     <div className="relative z-50">
       <div className="flex justify-between items-center p-3 lg:p-10">
@@ -28,16 +33,19 @@ export default function Navbar() {
             </div>
           ))}
         </div>
+        <ContactPopup isOpen={isPopupOpen} onClose={handleClosePopup} />
         
         <div className="lg:flex gap-5 lg:w-72 hidden">
-          <ShimmerButton className="text-black" background={"#87a922"}>
+          <ShimmerButton onClick={() => {
+            setIsPopupOpen(true)
+          }} className="text-black" background={"#87a922"}>
             Contact Us
           </ShimmerButton>
           <ShimmerButton shimmerColor={"#87a922"}>
             Get Started
           </ShimmerButton>
         </div>
-
+         
         <div className="lg:hidden block z-50">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

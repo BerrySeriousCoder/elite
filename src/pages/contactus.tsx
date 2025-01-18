@@ -10,6 +10,7 @@ import {
   Twitter,
   LucideIcon
 } from 'lucide-react';
+import AnimatedBackground from '@/components/animatedbg/animatedbg';
 
 interface ContactInfo {
   icon: LucideIcon;
@@ -75,8 +76,11 @@ const ContactUs: FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const colors = ['#e5f2bf' , '#6a7a38' , '#87a922']
+
   return (
     <div className="bg-black min-h-screen py-16">
+      <AnimatedBackground colors={colors} ></AnimatedBackground>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
