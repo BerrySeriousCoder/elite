@@ -37,7 +37,7 @@ export default function Navbar() {
         
         <div className="lg:flex gap-5 lg:w-72 hidden">
           <ShimmerButton onClick={() => {
-            setIsPopupOpen(true)
+            handleOpenPopup()
           }} className="text-black" background={"#87a922"}>
             Contact Us
           </ShimmerButton>
