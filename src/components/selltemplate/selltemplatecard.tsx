@@ -71,7 +71,8 @@ const ContactPopup: React.FC<ContactPopupProp> = ({isOpen , onClose}) => {
     {[
       'Customizable templates tailored to your needs',
       'Fresh, unique designs for your brand identity',
-      'Seamless user experience with modern features',
+      'Seamless user experience with modern features',   
+      
     ].map((item, index) => (
       <li key={index} className="flex items-center gap-2">
         <span
